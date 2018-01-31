@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- These are the options displayed in the gender drop-down Spinner -->
+    <string-array name="array_gender_options">
+        <item>Select</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="array_state_options">
+        <item>Select</item>
+        <item>Bihar</item>
+        <item>Delhi</item>
+        <item>Haryana</item>
+        <item>Uttar Pradesh</item>
+    </string-array>
+</resources>

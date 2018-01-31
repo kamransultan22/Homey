@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Homey</string>
+
+    <string name="facebook_application_id" translatable="false">539679076409807</string>
+    <string name="fb_login_protocol_scheme">fb539679076409807</string>
+
+</resources>

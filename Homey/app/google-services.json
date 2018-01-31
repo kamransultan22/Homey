@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "799017334123",
+    "firebase_url": "https://homey-50cc6.firebaseio.com",
+    "project_id": "homey-50cc6",
+    "storage_bucket": "homey-50cc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799017334123:android:eb9f521b0a167a8c",
+        "android_client_info": {
+          "package_name": "com.example.android.homey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799017334123-pab5r329g4jrlcpr1ogdiaqa36n23rgh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.homey",
+            "certificate_hash": "437785d933ff702c8b8a8022121907c447bea9a9"
+          }
+        },
+        {
+          "client_id": "799017334123-ehd37gg8vrldfk1vr42vjq1g3oe29rri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDn1T2FJOhSC_twqnehWZry-QJ7HF2SU0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799017334123-ehd37gg8vrldfk1vr42vjq1g3oe29rri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
