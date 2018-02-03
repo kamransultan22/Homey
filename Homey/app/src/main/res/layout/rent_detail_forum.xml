@@ -1,6 +1,310 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Full Address" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <!-- field -->
+                <EditText
+                    android:id="@+id/edit_rent_address"
+                    style="@style/EditorFieldStyle"
+                    android:hint="Address"
+                    android:inputType="textMultiLine|textCapWords" />
+
+                <EditText
+                    android:id="@+id/edit_rent_city"
+                    style="@style/EditorFieldStyle"
+                    android:hint="City"
+                    android:inputType="textCapWords" />
+
+                <!-- drop-down spinner -->
+                <Spinner
+                    android:id="@+id/spinner_state1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:paddingRight="16dp"
+                    android:spinnerMode="dropdown" />
+
+                <EditText
+                    android:id="@+id/edit_rent_zip_code"
+                    style="@style/EditorFieldStyle"
+                    android:hint="Zip Code"
+                    android:inputType="number" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Please tap on this button and then either select your locality on search box or if you are at place which you want to give on rent use the self locating button provided on that page." />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <Button
+                    android:id="@+id/property_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tap on me" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Available Rooms" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/dec_room"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="decrement"
+                        android:text="-" />
+
+
+                    <TextView
+                        android:id="@+id/avl_room_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="1"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/inc_room"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:onClick="increment"
+                        android:text="+" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="AC Rooms" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <CheckBox
+                    android:id="@+id/ac_rooms_checkbox"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Attached Washrooms" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <CheckBox
+                    android:id="@+id/attached_washrooms_checkbox"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Parking" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <CheckBox
+                    android:id="@+id/parking_checkbox"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                style="@style/CategoryStyle"
+                android:text="Wifi" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <CheckBox
+                    android:id="@+id/wifi_checkbox"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="Any Description"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp"
+                android:orientation="vertical">
+
+                <!-- field -->
+                <EditText
+                    android:id="@+id/edit_description"
+                    android:hint="Description (if any)...."
+                    android:inputType="textMultiLine"
+                    style="@style/EditorFieldStyle" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/container_measurement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="Price Per Day"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:paddingLeft="4dp">
+
+                <EditText
+                    android:id="@+id/edit_price"
+                    android:hint="Price Per Day"
+                    android:inputType="number"
+                    style="@style/EditorFieldStyle" />
+
+                <TextView
+                    android:id="@+id/label_weight_units"
+                    android:text="Rs"
+                    style="@style/EditorUnitsStyle" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

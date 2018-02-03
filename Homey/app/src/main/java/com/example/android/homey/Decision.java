@@ -10,16 +10,29 @@ import android.view.View;
 import android.widget.Button;
 
 import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.location.places.GeoDataClient;
+import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.PlaceDetectionClient;
+import com.example.android.homey.GoogleApisUse;
 
 /**
  * Created by user on 29-Jan-18.
  */
 
 public class Decision extends AppCompatActivity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.descision);
+
+        // Construct a GeoDataClient.
+        GoogleApisUse.mGeoDataClient = Places.getGeoDataClient(this, null);
+
+        // Construct a PlaceDetectionClient.
+        GoogleApisUse.mPlaceDetectionClient = Places.getPlaceDetectionClient(this, null);
+
+        // TODO: Start using the Places API.
 
         Button landlord = (Button) findViewById(R.id.landlord);
         Button tenant = (Button) findViewById(R.id.tenant);

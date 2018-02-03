@@ -1,6 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Destination" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <EditText
+                android:id="@+id/tenant_destination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Destination"
+                android:inputType="textMultiLine" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Check-in Date" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <EditText
+                android:id="@+id/check_in_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Check-in" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Check-out Date" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <EditText
+                android:id="@+id/check_out_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Check-out" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Room" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/dec_room"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="decrement"
+                    android:text="-" />
+
+
+                <TextView
+                    android:id="@+id/room_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/inc_room"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="increment"
+                    android:text="+" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Adults" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/dec_adults"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="decrement"
+                    android:text="-" />
+
+
+                <TextView
+                    android:id="@+id/adults_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="1"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/inc_adults"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="increment"
+                    android:text="+" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            style="@style/CategoryStyle"
+            android:text="Children" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/dec_children"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="decrement"
+                    android:text="-" />
+
+
+                <TextView
+                    android:id="@+id/children_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/inc_children"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:onClick="increment"
+                    android:text="+" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_measurement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="Enter the maximum distance from your given destination you prefered"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <EditText
+                android:id="@+id/edit_prefered_distance"
+                android:hint="Distance in Kms"
+                android:inputType="number"
+                style="@style/EditorFieldStyle" />
+
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:text="Km"
+                style="@style/EditorUnitsStyle" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

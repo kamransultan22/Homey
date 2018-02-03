@@ -28,6 +28,7 @@ import com.firebase.ui.auth.AuthUI;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
@@ -45,6 +46,7 @@ public class Signup extends AppCompatActivity {
     private EditText mZipCodeEditText;
     private EditText mPhoneNumberEditText;
     private EditText mEmailEditText;
+    static EditText mDOBEditText;
 
     private String mName;
     private String mGender;
@@ -73,13 +75,31 @@ public class Signup extends AppCompatActivity {
 
         mGenderSpinner = (Spinner) findViewById(R.id.spinner_gender);
         mStateSpinner = (Spinner) findViewById(R.id.spinner_state);
+
+        mDOBEditText = (EditText) findViewById(R.id.dob_edit_text);
+        mDOBEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    DialogFragment newFragment = new DatePickerFragment();
+                    newFragment.show(getSupportFragmentManager(), "datePicker");
+                }
+            }
+        });
+        mDOBEditText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment();
+                newFragment.show(getSupportFragmentManager(), "datePicker");
+            }
+        });
         setupGenderSpinner();
         setupStateSpinner();
     }
 
 
     /**
-     * Setup the dropdown spinner that allows the user to select the gender of the pet.
+     * Setup the dropdown spinner that allows the user to select the gender.
      */
     private void setupGenderSpinner() {
         // Create adapter for spinner. The list options are from the String array it will use
@@ -109,7 +129,7 @@ public class Signup extends AppCompatActivity {
     }
 
     /**
-     * Setup the dropdown spinner that allows the user to select the gender of the pet.
+     * Setup the dropdown spinner that allows the user to select the state.
      */
     private void setupStateSpinner() {
         // Create adapter for spinner. The list options are from the String array it will use
@@ -138,11 +158,6 @@ public class Signup extends AppCompatActivity {
         });
     }
 
-    public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
-    }
-
     public static class DatePickerFragment extends DialogFragment
             implements DatePickerDialog.OnDateSetListener {
 
@@ -163,6 +178,10 @@ public class Signup extends AppCompatActivity {
             mYearDOB = year;
             mMonthDOB = month+1;
             mDayDOB = day;
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(year, month, day);
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            mDOBEditText.setText(format.format(calendar.getTime()));
         }
     }
 
@@ -226,7 +245,7 @@ public class Signup extends AppCompatActivity {
         if("".equals(mZipCode)){
             mZipCodeEditText.setError("You can't leave this empty.");
             flag=0;
-        }else if (mName.length()<6) {
+        }else if (mZipCode.length()<6) {
             mZipCodeEditText.setError("ZipCode is too short.");
             flag=0;
         }
